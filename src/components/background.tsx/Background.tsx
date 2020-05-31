@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./background.scss";
-// import { ThemeContext } from "../../providers/Theme";
+import { ThemeContext } from "../../providers/Theme";
 
 const Background: React.FC = () => {
-  //const { color } = useContext(ThemeContext);
+  const { color: backgroundColor } = useContext(ThemeContext);
 
   return (
-    <svg className="background" fill="#3498DB">
+    <svg className="background" fill={backgroundColor}>
       <defs>
         <linearGradient id="linearGrad" x1="53.5%" y1="0%" x2="61%" y2="100%">
           <stop stopColor="#000000" stopOpacity="0" offset="0%"></stop>

@@ -9,9 +9,14 @@ interface Props {
   children: React.ReactNode;
 }
 
-const ThemeContext = createContext<object>({
+interface ContextType {
+  color: string;
+  changeColor: (value: string) => void;
+}
+
+const ThemeContext = createContext<ContextType>({
   color: "",
-  action: () => {},
+  changeColor: () => {},
 });
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
