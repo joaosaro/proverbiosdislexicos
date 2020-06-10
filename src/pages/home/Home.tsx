@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.scss";
 import Header from "../../modules/header/Header";
+import Footer from "../../modules/footer/Footer";
 
 const Home: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Home: React.FC = () => {
         <div className="proverbios-controls">controls</div>
         <div className="social">social</div>
       </div>
-      <footer className="footer">footer</footer>
+      <Footer />
     </div>
   );
 };
