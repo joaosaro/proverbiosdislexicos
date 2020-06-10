@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useCallback, useEffect } from "react";
 import proverbios, { ProverbioType } from "../data/proverbios";
 
 interface Props {
@@ -6,40 +6,44 @@ interface Props {
 }
 
 interface ContextType {
-  proverbio1: ProverbioType;
-  proverbio2: ProverbioType;
-  setProverbio1: () => void;
-  setProverbio2: () => void;
+  proverbio1?: ProverbioType;
+  proverbio2?: ProverbioType;
+  setProverbios: () => void;
 }
 
 const ProverbioContext = createContext<ContextType>({
   proverbio1: proverbios[0],
   proverbio2: proverbios[1],
-  setProverbio1: () => {},
-  setProverbio2: () => {}
+  setProverbios: () => {}
 });
 
+const randomProv = () => {
+  return Math.floor(Math.random() * proverbios.length);
+};
+
 const ProverbioProvider: React.FC<Props> = ({ children }) => {
-  const [proverbio1, setP1] = useState<ProverbioType>(proverbios[0]);
-  const [proverbio2, setP2] = useState<ProverbioType>(proverbios[1]);
+  const [proverbio1, setP1] = useState<ProverbioType | undefined>(undefined);
+  const [proverbio2, setP2] = useState<ProverbioType | undefined>(undefined);
 
-  const randomProv = () => {
-    return Math.random() * proverbios.length;
-  };
-
-  const setProverbio1 = () => {
+  const setProverbios = useCallback(() => {
     const p1 = randomProv();
-    setP1(proverbios[p1]);
-  };
+    let p2 = randomProv();
 
-  const setProverbio2 = () => {
-    const p2 = randomProv();
+    while (p1 === p2) {
+      p2 = randomProv();
+    }
+
+    setP1(proverbios[p1]);
     setP2(proverbios[p2]);
-  };
+  }, [setP1, setP2]);
+
+  useEffect(() => {
+    setProverbios();
+  }, [setProverbios]);
 
   return (
     <ProverbioContext.Provider
-      value={{ proverbio1, proverbio2, setProverbio1, setProverbio2 }}
+      value={{ proverbio1, proverbio2, setProverbios }}
     >
       {children}
     </ProverbioContext.Provider>
