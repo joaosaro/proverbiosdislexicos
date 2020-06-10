@@ -1,28 +1,24 @@
 import React, { createContext, useState } from "react";
-import themes from "../data/themes";
-
-// type Theme = {
-//   [key in keyof typeof themes]: string;
-// }; // DOUBT: Use Theme as type
+import themes, { ThemeType } from "../data/themes";
 
 interface Props {
   children: React.ReactNode;
 }
 
 interface ContextType {
-  color: string;
-  changeColor: (value: string) => void;
+  color: ThemeType | undefined;
+  changeColor: (value: ThemeType) => void;
 }
 
 const ThemeContext = createContext<ContextType>({
-  color: "",
-  changeColor: () => {},
+  color: "#393D3F",
+  changeColor: () => {}
 });
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [color, setColor] = useState<string>(themes.default.blue);
+  const [color, setColor] = useState<ThemeType>(themes.default[0]);
 
-  const changeColor = (value: string) => {
+  const changeColor = (value: ThemeType) => {
     setColor(value);
   };
 

@@ -1,14 +1,16 @@
 const themes = {
-  default: {
-    blue: "#3498DB",
-    lightGreen: "#1DDFB9",
-    yellow: "#FFFB37",
-    purple: "#9B59B6",
-    darkGreen: "#1ABC9C",
-    orange: "#E67E22",
-    red: "#E74C3C",
-    darkYellow: "#F1C40F",
-  },
+  default: [
+    "#3498DB",
+    "#1DDFB9",
+    "#FFFB37",
+    "#9B59B6",
+    "#1ABC9C",
+    "#E67E22",
+    "#E74C3C",
+    "#F1C40F"
+  ]
 };
+
+export type ThemeType = typeof themes.default[0];
 
 export default themes;
