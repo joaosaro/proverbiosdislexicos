@@ -3,6 +3,7 @@ import "./home.scss";
 import Header from "../../modules/header/Header";
 import Proverbio from "../../modules/proverbio/Proverbio";
 import Footer from "../../modules/footer/Footer";
+import Social from "../../modules/social/Social";
 
 const Home: React.FC = () => {
   return (
@@ -11,10 +12,8 @@ const Home: React.FC = () => {
       <main>
         <Proverbio />
       </main>
-      <div className="actions">
-        <div className="proverbios-controls">controls</div>
-        <div className="social">social</div>
-      </div>
+      <aside className="proverbios-controls">controls</aside>
+      <Social />
       <Footer />
     </div>
   );

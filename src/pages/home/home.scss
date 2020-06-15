@@ -19,9 +19,16 @@
   grid-row: 2 / span 1;
 }
 
-.actions {
+.proverbios-controls {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.socials-links {
   grid-column: 2 / span 1;
   grid-row: 2 / span 2;
+  place-self: end;
+  margin-right: 30px;
 }
 
 .footer {
