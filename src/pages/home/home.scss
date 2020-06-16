@@ -3,7 +3,7 @@
 .home {
   display: grid;
   grid-template-columns: 1fr min-content;
-  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: 60px 1fr 60px;
   grid-gap: 20px;
   height: 100%;
   padding: 30px 0 30px 30px;
@@ -34,4 +34,5 @@
 .footer {
   grid-column: 1 / span 1;
   grid-row: 3 / span 1;
+  place-self: end start;
 }
