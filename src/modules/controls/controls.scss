@@ -1,0 +1,40 @@
+@import "../../styles/globals";
+
+$controls-gap: 10px 20px;
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-template-rows: repeat(2, min-content);
+  grid-gap: $controls-gap;
+  transform: translateX(75px);
+  transition: transform 0.3s;
+
+  &--open {
+    transform: translateX(0);
+  }
+}
+
+// Temporary
+.options-placeholder {
+  width: 50px;
+  background-color: steelblue;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.palette-placeholder {
+  width: 80px;
+  height: 140px;
+  background-color: white;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.retacement-placeholder {
+  background-color: #999;
+  padding: 0;
+  width: 50px;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
