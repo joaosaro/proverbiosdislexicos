@@ -9,12 +9,16 @@ interface ContextType {
   proverbio1?: ProverbioType;
   proverbio2?: ProverbioType;
   setProverbios: () => void;
+  editable: boolean;
+  setEditable: (editable: boolean) => void;
 }
 
 const ProverbioContext = createContext<ContextType>({
   proverbio1: proverbios[0],
   proverbio2: proverbios[1],
-  setProverbios: () => {}
+  setProverbios: () => {},
+  editable: false,
+  setEditable: () => {}
 });
 
 const randomProv = () => {
@@ -24,6 +28,7 @@ const randomProv = () => {
 const ProverbioProvider: React.FC<Props> = ({ children }) => {
   const [proverbio1, setP1] = useState<ProverbioType | undefined>(undefined);
   const [proverbio2, setP2] = useState<ProverbioType | undefined>(undefined);
+  const [editable, setEditable] = useState<boolean>(false);
 
   const setProverbios = useCallback(() => {
     const p1 = randomProv();
@@ -43,7 +48,13 @@ const ProverbioProvider: React.FC<Props> = ({ children }) => {
 
   return (
     <ProverbioContext.Provider
-      value={{ proverbio1, proverbio2, setProverbios }}
+      value={{
+        proverbio1,
+        proverbio2,
+        setProverbios,
+        editable,
+        setEditable
+      }}
     >
       {children}
     </ProverbioContext.Provider>

@@ -7,7 +7,7 @@ import { ProverbioContext } from "../../providers/Proverbio";
 
 const Controls: React.FC = () => {
   const [paletteOpen, togglePalette] = useState<boolean>(false);
-  const { setProverbios } = useContext(ProverbioContext);
+  const { setProverbios, editable, setEditable } = useContext(ProverbioContext);
 
   const classes = ["controls", paletteOpen ? "controls--open" : null]
     .join(" ")
@@ -24,7 +24,7 @@ const Controls: React.FC = () => {
           Novo provérbio
         </ControlButton>
         <ControlButton
-          onClick={() => console.log("editar text")}
+          onClick={() => setEditable(!editable)}
           iconSrc="/images/button_text.svg"
           iconAlt="Gerador"
         >
