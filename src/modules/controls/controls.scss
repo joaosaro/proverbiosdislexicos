@@ -1,0 +1,19 @@
+@import "../../styles/globals";
+
+.controls {
+  display: grid;
+  grid-template-columns: min-content 80px;
+  grid-template-rows: repeat(2, min-content);
+  grid-gap: 10px 0;
+  transform: translateX(80px);
+  transition: transform 0.3s;
+
+  &--open {
+    transform: translateX(0);
+  }
+}
+
+.controls_options {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}

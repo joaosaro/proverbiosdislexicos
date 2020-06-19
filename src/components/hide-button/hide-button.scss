@@ -1,0 +1,23 @@
+@import "../../styles/globals";
+
+.hide-button {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  outline: 0;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+.hide-button__icon {
+  height: 12px;
+}

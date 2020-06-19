@@ -1,0 +1,13 @@
+@import "../../styles/globals";
+
+.proverbio-text {
+  margin: 0;
+  font-size: 6vh;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &[contenteditable="true"] {
+    outline: none;
+    text-decoration: underline dashed;
+  }
+}

@@ -1,22 +1,18 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
-import { Navbar } from './components/Navbar'
-import { About } from './pages/About'
-import { Home } from './pages/Home'
+import React from "react";
+import { ThemeProvider } from "./providers/Theme";
+import { ProverbioProvider } from "./providers/Proverbio";
+import Background from "./components/background/Background";
+import Home from "./pages/home/Home";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <div className="container">
-        <Switch>
-          <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} />
-        </Switch>
-      </div>
-    </BrowserRouter>
-  )
-}
+    <ThemeProvider>
+      <ProverbioProvider>
+        <Background />
+        <Home />
+      </ProverbioProvider>
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;

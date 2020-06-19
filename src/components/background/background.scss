@@ -1,0 +1,9 @@
+@import "../../styles/globals";
+
+.background {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  transition: fill 1s;
+  z-index: -1;
+}

@@ -1,0 +1,12 @@
+@import "../../styles/globals";
+
+.proverbio {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20%;
+  height: 100%;
+  padding-left: 15vw;
+  padding-right: 10vw;
+  overflow: hidden;
+}
