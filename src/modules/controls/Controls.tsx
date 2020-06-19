@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./controls.scss";
 import ControlButton from "../../components/controlButton/controlButton";
+import { ProverbioContext } from "../../providers/Proverbio";
 
 const Controls: React.FC = () => {
   const [paletteOpen, togglePalette] = useState<boolean>(false);
+  const { setProverbios } = useContext(ProverbioContext);
 
   const classes = ["controls", paletteOpen ? "controls--open" : null]
     .join(" ")
@@ -13,7 +15,7 @@ const Controls: React.FC = () => {
     <aside className={classes}>
       <div className="controls_options">
         <ControlButton
-          onClick={() => console.log("new proverbio")}
+          onClick={setProverbios}
           iconSrc="/images/button_generator.svg"
           iconAlt="Gerador"
         >
