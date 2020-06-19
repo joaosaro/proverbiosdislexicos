@@ -8,13 +8,8 @@ const Social: React.FC = () => {
     <aside className="socials-links">
       <ul>
         {socialLinks.map((social, index) => (
-          <li className="social__media">
-            <SocialMedia
-              key={index}
-              href={social.href}
-              src={social.src}
-              alt={social.alt}
-            />
+          <li className="social__media" key={index}>
+            <SocialMedia href={social.href} src={social.src} alt={social.alt} />
           </li>
         ))}
       </ul>

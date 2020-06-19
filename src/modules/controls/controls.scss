@@ -2,7 +2,7 @@
 
 .controls {
   display: grid;
-  grid-template-columns: 120px 80px;
+  grid-template-columns: min-content 80px;
   grid-template-rows: repeat(2, min-content);
   grid-gap: 10px 0;
   transform: translateX(80px);

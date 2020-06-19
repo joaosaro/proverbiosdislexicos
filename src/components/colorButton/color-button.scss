@@ -1,0 +1,36 @@
+@import "../../styles/globals";
+
+.color-button {
+  position: relative;
+  height: 18px;
+  width: 18px;
+  margin: 5px;
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  outline: none;
+  transition: border 0.3s, transform 0.3s;
+
+  &:hover {
+    border-color: rgba(100, 100, 100, 0.58);
+    transform: scale(1.25);
+  }
+}
+
+.color-button__active {
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+    background-image: url("/images/selected-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

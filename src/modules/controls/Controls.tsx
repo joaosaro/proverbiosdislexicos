@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./controls.scss";
 import ControlButton from "../../components/controlButton/controlButton";
+import Palette from "../../components/palette/Palette";
 import { ProverbioContext } from "../../providers/Proverbio";
 
 const Controls: React.FC = () => {
@@ -29,14 +30,14 @@ const Controls: React.FC = () => {
           Editar texto
         </ControlButton>
         <ControlButton
-          onClick={() => console.log("editar text")}
+          onClick={() => togglePalette(!paletteOpen)}
           iconSrc="/images/button_color.svg"
           iconAlt="Gerador"
         >
           Alterar côr
         </ControlButton>
       </div>
-      <div className="palette-placeholder">palette</div>
+      <Palette />
       <button
         className="retacement-placeholder"
         onClick={() => {

@@ -1,10 +1,10 @@
-import React, { HTMLAttributes } from "react";
+import React, { HTMLAttributes, ImgHTMLAttributes } from "react";
 import "./social-media.scss";
 
 export interface Props extends HTMLAttributes<HTMLElement> {
   href: string;
-  src: string;
-  alt: string;
+  src: ImgHTMLAttributes<HTMLImageElement>["src"];
+  alt: ImgHTMLAttributes<HTMLImageElement>["alt"];
 }
 
 const SocialMedia: React.FC<Props> = ({

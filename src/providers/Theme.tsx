@@ -7,23 +7,19 @@ interface Props {
 
 interface ContextType {
   color: ThemeType | undefined;
-  changeColor: (value: ThemeType) => void;
+  setColor: (value: ThemeType) => void;
 }
 
 const ThemeContext = createContext<ContextType>({
   color: "#393D3F",
-  changeColor: () => {}
+  setColor: () => {}
 });
 
 const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [color, setColor] = useState<ThemeType>(themes.default[0]);
 
-  const changeColor = (value: ThemeType) => {
-    setColor(value);
-  };
-
   return (
-    <ThemeContext.Provider value={{ color, changeColor }}>
+    <ThemeContext.Provider value={{ color, setColor }}>
       {children}
     </ThemeContext.Provider>
   );
