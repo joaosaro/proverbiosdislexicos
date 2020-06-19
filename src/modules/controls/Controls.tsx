@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import "./controls.scss";
-import ControlButton from "../../components/controlButton/controlButton";
+import ControlButton from "../../components/control-button/controlButton";
 import HideButton from "../../components/hide-button/hideButton";
 import Palette from "../../components/palette/Palette";
 import { ProverbioContext } from "../../providers/Proverbio";

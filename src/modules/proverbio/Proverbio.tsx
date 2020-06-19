@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./proverbio.scss";
 import { ProverbioContext } from "../../providers/Proverbio";
-import ProverbioText from "../../components/proverbioText/ProverbioText";
+import ProverbioText from "../../components/proverbio-text/ProverbioText";
 
 const Proverbio: React.FC = () => {
   const { proverbio1, proverbio2 } = useContext(ProverbioContext);

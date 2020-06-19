@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./palette.scss";
 import themes from "../../data/themes";
-import ColorButton from "../colorButton/ColorButton";
+import ColorButton from "../color-button/ColorButton";
 import { ThemeContext } from "../../providers/Theme";
 
 const Palette: React.FC = () => {
