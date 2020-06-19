@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./controls.scss";
 import ControlButton from "../../components/controlButton/controlButton";
+import HideButton from "../../components/hide-button/hideButton";
 import Palette from "../../components/palette/Palette";
 import { ProverbioContext } from "../../providers/Proverbio";
 
@@ -38,14 +39,13 @@ const Controls: React.FC = () => {
         </ControlButton>
       </div>
       <Palette />
-      <button
-        className="retacement-placeholder"
+      <HideButton
+        iconSrc="/images/right-arrow.svg"
+        iconAlt="Hide palette"
         onClick={() => {
           togglePalette(false);
         }}
-      >
-        Arrow
-      </button>
+      />
     </aside>
   );
 };

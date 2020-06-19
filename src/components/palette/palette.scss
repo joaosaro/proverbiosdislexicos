@@ -1,12 +1,14 @@
 @import "../../styles/globals";
 
 .palette {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   height: 140px;
   padding: 10px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 20px 0 0 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: white;
   overflow: hidden;
