@@ -1,13 +1,11 @@
 @import "../../styles/globals";
 
-$controls-gap: 10px 20px;
-
 .controls {
   display: grid;
-  grid-template-columns: repeat(2, min-content);
+  grid-template-columns: 120px 80px;
   grid-template-rows: repeat(2, min-content);
-  grid-gap: $controls-gap;
-  transform: translateX(75px);
+  grid-gap: 10px 0;
+  transform: translateX(80px);
   transition: transform 0.3s;
 
   &--open {
@@ -17,8 +15,7 @@ $controls-gap: 10px 20px;
 
 // Temporary
 .options-placeholder {
-  width: 50px;
-  background-color: steelblue;
+  margin-right: 20px;
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
 }
