@@ -12,7 +12,6 @@ export const Default = () => (
 
 export const Active = () => (
   <>
-    <ColorButton color="steelblue" />
     <ColorButton color="red" active />
   </>
 );
