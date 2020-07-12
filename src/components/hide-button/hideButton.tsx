@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, ImgHTMLAttributes } from "react";
 import "./hide-button.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  iconSrc?: ImgHTMLAttributes<HTMLImageElement>["src"];
+  iconSrc: ImgHTMLAttributes<HTMLImageElement>["src"];
   iconAlt: ImgHTMLAttributes<HTMLImageElement>["alt"];
 }
 
