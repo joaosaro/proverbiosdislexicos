@@ -13,11 +13,16 @@ const Controls: React.FC = () => {
     .join(" ")
     .trim();
 
+  const onClickNovoProverbio = () => {
+    setProverbios();
+    setEditable(false);
+  };
+
   return (
     <aside className={classes}>
       <div className="controls_options">
         <ControlButton
-          onClick={setProverbios}
+          onClick={onClickNovoProverbio}
           iconSrc="/images/button_generator.svg"
           iconAlt="Gerador"
         >
