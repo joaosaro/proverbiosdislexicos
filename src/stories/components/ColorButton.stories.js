@@ -1,5 +1,5 @@
 import React from "react";
-import ColorButton from "../components/color-button/ColorButton";
+import ColorButton from "../../components/color-button/ColorButton";
 
 export const Default = () => (
   <>
@@ -17,6 +17,6 @@ export const Active = () => (
 );
 
 export default {
-  title: "ColorButton",
+  title: "Components/ColorButton",
   component: ColorButton
 };

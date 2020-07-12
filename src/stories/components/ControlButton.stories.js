@@ -1,8 +1,8 @@
 import React from "react";
-import ControlButton from "../components/control-button/controlButton";
+import ControlButton from "../../components/control-button/controlButton";
 
 export const Default = () => (
-  <div style={{ backgroundColor: "#555", minHeight: 100 }}>
+  <div style={{ backgroundColor: "#000", minHeight: 40 }}>
     <ControlButton
       iconSrc="https://www.proverbiosdislexicos.com/images/button_generator.svg"
       iconAlt="placeholder"
@@ -13,6 +13,6 @@ export const Default = () => (
 );
 
 export default {
-  title: "ControlButton",
+  title: "Components/ControlButton",
   component: ControlButton
 };

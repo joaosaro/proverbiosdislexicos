@@ -1,6 +1,6 @@
 import React from "react";
-import Background from "../components/background/Background";
-import { ThemeProvider } from "../providers/Theme";
+import Background from "../../components/background/Background";
+import { ThemeProvider } from "../../providers/Theme";
 
 export const Default = () => <Background />;
 
@@ -11,6 +11,6 @@ export const WithThemeProvider = () => (
 );
 
 export default {
-  title: "Background",
+  title: "Components/Background",
   component: Background
 };
