@@ -1,27 +1,12 @@
-import React, { useContext } from "react";
+import React, { ReactNode } from "react";
 import "./palette.scss";
-import themes from "../../data/themes";
-import ColorButton from "../color-button/ColorButton";
-import { ThemeContext } from "../../providers/Theme";
 
-const Palette: React.FC = () => {
-  const colors = themes.default;
-  const { color: activeColor, setColor } = useContext(ThemeContext);
+interface Props {
+  children: ReactNode;
+}
 
-  return (
-    <div className="palette">
-      {colors.map((color, index) => {
-        return (
-          <ColorButton
-            key={index}
-            color={color}
-            active={color === activeColor}
-            onClick={() => setColor(themes.default[index])}
-          />
-        );
-      })}
-    </div>
-  );
+const Palette: React.FC<Props> = ({ children }) => {
+  return <div className="palette">{children}</div>;
 };
 
 export default Palette;

@@ -1,12 +1,17 @@
 import React, { useState, useContext } from "react";
-import "./controls.scss";
 import ControlButton from "../../components/control-button/controlButton";
 import HideButton from "../../components/hide-button/hideButton";
 import Palette from "../../components/palette/Palette";
+import ColorButton from "../../components/color-button/ColorButton";
 import { ProverbioContext } from "../../providers/Proverbio";
+import { ThemeContext } from "../../providers/Theme";
+import themes from "../../data/themes";
+import "./controls.scss";
 
 const Controls: React.FC = () => {
+  const colors = themes.default;
   const [paletteOpen, togglePalette] = useState<boolean>(false);
+  const { color: activeColor, setColor } = useContext(ThemeContext);
   const { setProverbios, editable, setEditable } = useContext(ProverbioContext);
 
   const classes = ["controls", paletteOpen ? "controls--open" : null]
@@ -43,7 +48,18 @@ const Controls: React.FC = () => {
           Alterar côr
         </ControlButton>
       </div>
-      <Palette />
+      <Palette>
+        {colors.map((color, index) => {
+          return (
+            <ColorButton
+              key={index}
+              color={color}
+              active={color === activeColor}
+              onClick={() => setColor(themes.default[index])}
+            />
+          );
+        })}
+      </Palette>
       <HideButton
         iconSrc="/images/right-arrow.svg"
         iconAlt="Hide palette"
